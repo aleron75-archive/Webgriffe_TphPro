@@ -15,7 +15,7 @@ class Webgriffe_TphPro_Model_Observer {
                 . ($block->getNameInLayout() == 'root' ? 'handles="' . implode(",", $block->getLayout()->getUpdate()->getHandles()) . '"' : '')
                 . ' block="' . get_class($block) . '"'
                 #. ' template="' . $block->getTemplate() . '"'
-                . (!strcmp($block->getTemplate(), '') ? '' : ' template_file="' . $block->getTemplateFile() )
+                . (!strcmp($block->getTemplate(), '') ? '' : ' template_file="' . $block->getTemplateFile() . '"' )
                 . ' name="' . $block->getNameInLayout() . '"'
                 . ' alias="' . $block->getBlockAlias() . '"'
                 . '>' . $transport->getHtml() . '</magento>';
