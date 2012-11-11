@@ -7,12 +7,20 @@
  */
 class Webgriffe_TphPro_Model_Observer {
 
+    public function addHandlesBlock($observer) {
+        $event = $observer->getEvent();
+        $layout = $event->getLayout();
+        $handlesBlock = $layout->createBlock('Webgriffe_TphPro_Block_Handles', 'webgriffe_tphpro_handles');
+        $layout->addOutputBlock('webgriffe_tphpro_handles');
+    }
+
     public function addTemplateHints($observer) {
         $event = $observer->getEvent();
         $block = $event->getBlock();
+        #$isRootBlock = $block->getNameInLayout() == 'root';
         $transport = $event->getTransport();
         $html = '<magento '
-                . ($block->getNameInLayout() == 'root' ? 'handles="' . implode(",", $block->getLayout()->getUpdate()->getHandles()) . '"' : '')
+                #. ($isRootBlock ? 'handles="' . implode(",", $block->getLayout()->getUpdate()->getHandles()) . '"' : '')
                 . ' block="' . get_class($block) . '"'
                 #. ' template="' . $block->getTemplate() . '"'
                 . (!strcmp($block->getTemplate(), '') ? '' : ' template_file="' . $block->getTemplateFile() . '"' )
