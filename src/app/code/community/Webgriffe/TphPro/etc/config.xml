@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Webgriffe_TphPro>
+            <version>1.0.0</version>
+        </Webgriffe_TphPro>
+    </modules>
+    <global>
+        <blocks>
+            <webgriffe_tphpro>
+                <class>Webgriffe_TphPro_Block</class>
+            </webgriffe_tphpro>
+        </blocks>
+        <helpers>
+            <webgriffe_tphpro>
+                <class>Webgriffe_TphPro_Helper</class>
+            </webgriffe_tphpro>
+        </helpers>
+        <models>
+            <webgriffe_tphpro>
+                <class>Webgriffe_TphPro_Model</class>
+            </webgriffe_tphpro>
+        </models>
+    </global>
+</config>
