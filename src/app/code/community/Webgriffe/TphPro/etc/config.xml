@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Webgriffe_TphPro>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
         </Webgriffe_TphPro>
     </modules>
     <global>
@@ -21,6 +21,18 @@
                 <class>Webgriffe_TphPro_Model</class>
             </webgriffe_tphpro>
         </models>
+
+        <events>
+            <http_response_send_before>
+                <observers>
+                    <webgriffe_http_response_send_before>
+                        <type>enabled</type>
+                        <class>webgriffe_tphpro/observer</class>          
+                        <method>logRequestParameters</method>
+                    </webgriffe_http_response_send_before>
+                </observers>
+            </http_response_send_before>
+        </events>        
     </global>
     
     <frontend>
@@ -46,4 +58,29 @@
             </core_block_abstract_to_html_after>
         </events>
     </frontend>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <webgriffe_tphpro>
+                                            <title>Webgriffe - Template Path Hints Pro</title>
+                                        </webgriffe_tphpro>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
 </config>
