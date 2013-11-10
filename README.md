@@ -16,7 +16,7 @@ You can choose whether to print them as HTML Elements or Comments.
 
 Furthermore you can choose to log both Frontend and Backend HTTP Request's parameters.
 
-Once installed, you can configure this extension in the @System > Configuration > WEBGRIFFE EXTENSIONS > Template Path Hints Pro@ section.
+Once installed, you can configure this extension in the `System > Configuration > WEBGRIFFE EXTENSIONS > Template Path Hints Pro` section.
 
 Compatibility
 -------------
