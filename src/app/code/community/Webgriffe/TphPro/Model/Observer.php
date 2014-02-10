@@ -24,6 +24,11 @@ class Webgriffe_TphPro_Model_Observer {
         /** @var Mage_Core_Block_Abstract $block */
         $block = $event->getBlock();
 
+        if ($block instanceof Webgriffe_TphPro_Block_Handles)
+        {
+            return;
+        }
+
         $transport = $event->getTransport();
 
         $html = '';
