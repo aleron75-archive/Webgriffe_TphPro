@@ -1,0 +1,15 @@
+{
+    "name": "aleron75/webgriffe_tph-pro",
+    "description": "An enhanced Template Path Hints extension for Magento that inserts references to used Magento Blocks inside HTML code, avoiding the usage of the more invasive built in Template Path Hints.",
+    "type": "magento-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Alessandro Ronchi",
+            "email": "aleron75@gmail.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
