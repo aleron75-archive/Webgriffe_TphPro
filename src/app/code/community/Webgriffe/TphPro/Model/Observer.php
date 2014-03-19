@@ -72,7 +72,9 @@ class Webgriffe_TphPro_Model_Observer {
 
             if (Mage::app()->getStore()->isAdmin()) {
                 $userType = 'Admin';
-                $userName = Mage::getSingleton('admin/session')->getUser()->getUsername();
+                if ($user = Mage::getSingleton('admin/session')->getUser()) {
+                    $userName = $user->getUsername();
+                }
             } else {
                 $email = Mage::getSingleton('customer/session')->getCustomer()->getEmail();
                 if (!empty($email)) {
