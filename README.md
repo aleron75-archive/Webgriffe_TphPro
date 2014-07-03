@@ -4,12 +4,13 @@ An enhanced Template Path Hints extension for Magento that inserts references to
 
 Facts
 -----
-- version 1.1.4
+- version 1.1.5
 - extension key: Webgriffe_TphPro
 - [extension on GitHub](https://github.com/aleron75/Webgriffe_TphPro)
 
 Release Notes
 -------------
+- 1-1-5 - Some useful abbreviations (see in Description); changed tag naming when printing as html element to be uniform to layout syntax;
 - 1-1-4 - Fix admin login error
 - 1.1.3 - Improvements
     * added user info when logging Request Parameters; this way you can use this extension to log frontend and backend user actions; not very handy but useful;
@@ -32,7 +33,9 @@ Once installed, you can configure this extension in the `System > Configuration 
 Otherwise you can force printing of hints and handles specifying one or more of the following parameters in the query string:
 
 * ```handles=html_element``` or ```handles=html_comment```
+* ```ha=e``` or ```ha=c``` (shorter version of above)
 * ```hints=html_element``` or ```hints=html_comment```
+* ```hi=e``` or ```hi=c``` (shorter version of above)
 
 Compatibility
 -------------
