@@ -4,6 +4,8 @@ class Webgriffe_TphPro_Model_System_Config_Source_Display
     const DISPLAY_NONE = 'none';
     const DISPLAY_HTML_ELEMENT = 'html_element';
     const DISPLAY_HTML_COMMENT = 'html_comment';
+    const DISPLAY_H_E = 'e';
+    const DISPLAY_H_C= 'c';
 
     /**
      * Options getter

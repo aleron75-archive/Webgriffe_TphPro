@@ -2,6 +2,9 @@
 class Webgriffe_TphPro_Helper_Data extends Mage_Core_Helper_Data
 {
     public function getDisplayHandlesType() {
+        if (Mage::app()->getRequest()->getParam('ha')) {
+            return Mage::app()->getRequest()->getParam('ha');
+        }
         if (Mage::app()->getRequest()->getParam('handles')) {
             return Mage::app()->getRequest()->getParam('handles');
         }
@@ -9,6 +12,9 @@ class Webgriffe_TphPro_Helper_Data extends Mage_Core_Helper_Data
     }
 
     public function getDisplayHintsType() {
+        if (Mage::app()->getRequest()->getParam('hi')) {
+            return Mage::app()->getRequest()->getParam('hi');
+        }
         if (Mage::app()->getRequest()->getParam('hints')) {
             return Mage::app()->getRequest()->getParam('hints');
         }

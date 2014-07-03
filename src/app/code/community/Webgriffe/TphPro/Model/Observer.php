@@ -33,22 +33,26 @@ class Webgriffe_TphPro_Model_Observer {
 
         $html = '';
         switch(Mage::helper('webgriffe_tphpro')->getDisplayHintsType()) {
+            case Webgriffe_TphPro_Model_System_Config_Source_Display::DISPLAY_H_E:
+                // break intentionally omitted
             case Webgriffe_TphPro_Model_System_Config_Source_Display::DISPLAY_HTML_ELEMENT:
-                $html = '<magento '
+                $html = '<magento_block '
                     #. ($isRootBlock ? 'handles="' . implode(",", $block->getLayout()->getUpdate()->getHandles()) . '"' : '')
-                    . ' block="' . get_class($block) . '"'
+                    . ' type="' . get_class($block) . '"'
                     #. ' template="' . $block->getTemplate() . '"'
-                    . (!strcmp($block->getTemplate(), '') ? '' : ' template_file="' . $block->getTemplateFile() . '"' )
+                    . (!strcmp($block->getTemplate(), '') ? '' : ' template="' . $block->getTemplateFile() . '"' )
                     . ' name="' . $block->getNameInLayout() . '"'
-                    . ' alias="' . $block->getBlockAlias() . '"'
+                    . ' as="' . $block->getBlockAlias() . '"'
                     . '>' . $transport->getHtml() . '</magento>';
                 break;
 
+            case Webgriffe_TphPro_Model_System_Config_Source_Display::DISPLAY_H_C:
+                // break intentionally omitted
             case Webgriffe_TphPro_Model_System_Config_Source_Display::DISPLAY_HTML_COMMENT:
-                $data = 'block="' . get_class($block) . '"'
-                    . (!strcmp($block->getTemplate(), '') ? '' : ' template_file="' . $block->getTemplateFile() . '"' )
+                $data = 'type="' . get_class($block) . '"'
+                    . (!strcmp($block->getTemplate(), '') ? '' : ' template="' . $block->getTemplateFile() . '"' )
                     . ' name="' . $block->getNameInLayout() . '"'
-                    . ' alias="' . $block->getBlockAlias() . '"';
+                    . ' as="' . $block->getBlockAlias() . '"';
                 $html = "\r\n<!-- [HINTS BEGIN " . $data . "] -->\r\n"
                     . $transport->getHtml()
                     . "<!-- [HINTS END " . $data . "] -->\r\n";
