@@ -8,6 +8,10 @@
 class Webgriffe_TphPro_Model_Observer {
 
     public function addHandlesBlock($observer) {
+        if (Mage::app()->getRequest()->isAjax()) {
+            return;
+        }
+        
         $event = $observer->getEvent();
         /** @var Mage_Core_Model_Layout $layout */
         if ($layout = $event->getLayout()) {
@@ -20,6 +24,10 @@ class Webgriffe_TphPro_Model_Observer {
     }
 
     public function addTemplateHints($observer) {
+        if (Mage::app()->getRequest()->isAjax()) {
+            return;
+        }
+        
         $event = $observer->getEvent();
         /** @var Mage_Core_Block_Abstract $block */
         $block = $event->getBlock();
